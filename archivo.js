@@ -1,7 +1,18 @@
 //apreta aceptar sin poner usuario primero 
-alert("Bienvenido al turnero online")
 
-let usuario = prompt ("ingerese su nombre de usuario");
+function saludar() {
+    
+    alert("Bienvenido al turnero online")
+    let usuario = prompt ("ingerese su nombre de usuario")
+    return usuario
+
+}
+
+
+let usuario = saludar()
+
+
+
 if (usuario != "" && usuario != null) {
     
 
@@ -80,7 +91,6 @@ if (usuario != "" && usuario != null) {
 }else {
     alert ("pone tu nombre desgraciado, recarga")
 }
-
 
 
 
