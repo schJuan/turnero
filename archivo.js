@@ -1,6 +1,41 @@
+function Alumnos (nombre, apellido, anio){
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.anio = anio;
+}
+
+/*const cliente1 = new Alumnos("Juan", "Schlotthauer",25 )
+const cliente2 = new Alumnos("Juana", "Vicuña",39 )
+const cliente3 = new Alumnos("Pablo", "Picasso",239 )*/
+
+/*let funciona = "los alumnos que vienen a las 9 son";
+funciona += "\n"+cliente1.nombre + "" + cliente1.apellido 
+funciona += "\n"+cliente2.nombre + "" + cliente2.apellido 
+funciona += "\n"+cliente3.nombre + "" + cliente3.apellido */
+
+function crearAlumno() {
+    let nombre = prompt("ingrese su nombre")
+    let apellido= prompt("ingrese su apellido")
+    let anio = prompt ("ingrese su edad")
+
+    if (nombre && apellido && anio) {
+       
+        let nuevoAlumno = new Alumnos (nombre, apellido, anio)
+        alert("Alumno nuevo"+ nuevoAlumno.nombre + " " + nuevoAlumno.apellido + "tu edad es de" +" "+ nuevoAlumno.anio)
+
+    } else {
+        alert("Quien chota sos?")
+    }
+    
+}
+
+for (let i= 0 ; i <2; i++) {
+   crearAlumno();
+    
+}
 //apreta aceptar sin poner usuario primero 
 
-function saludar() {
+/*function saludar() {
     
     alert("Bienvenido al turnero online")
     let usuario = prompt ("ingerese su nombre de usuario")
