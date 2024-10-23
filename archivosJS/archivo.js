@@ -1,4 +1,4 @@
-function Alumnos (nombre, apellido, anio){
+/*function Alumnos (nombre, apellido, anio){
     this.nombre = nombre;
     this.apellido = apellido;
     this.anio = anio;
@@ -13,15 +13,17 @@ funciona += "\n"+cliente1.nombre + "" + cliente1.apellido
 funciona += "\n"+cliente2.nombre + "" + cliente2.apellido 
 funciona += "\n"+cliente3.nombre + "" + cliente3.apellido */
 
-function crearAlumno() {
+/*function crearAlumno() {
     let nombre = prompt("ingrese su nombre")
     let apellido= prompt("ingrese su apellido")
     let anio = prompt ("ingrese su edad")
 
     if (nombre && apellido && anio) {
        
-        let nuevoAlumno = new Alumnos (nombre, apellido, anio)
+        let nuevoAlumno = new Alumno (anio,nombre, apellido)
         alert("Alumno nuevo"+ nuevoAlumno.nombre + " " + nuevoAlumno.apellido + "tu edad es de" +" "+ nuevoAlumno.anio)
+        usuarios_alumnos.push(nuevoAlumno)
+        console.log(nuevoAlumno)
 
     } else {
         alert("Quien chota sos?")

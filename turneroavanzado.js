@@ -1,4 +1,3 @@
-
 function saludar() {
 
     alert("Bienvenido al turnero online");
@@ -72,8 +71,47 @@ function confirmacion (usuario, arreglo){
 
 let turnoOchoHoras = ["juan"];
 
-let usuario = saludar();
+//let usuario = saludar();
 
-let horario = pedirHorario ();
+//let horario = pedirHorario ();
 
-let andara = confirmacion (usuario, turnoOchoHoras);
+//let andara = confirmacion (usuario, turnoOchoHoras);
+
+
+
+
+
+function crearAlumno() {
+    let nombre = prompt("ingrese su usuario")
+    let contrasenia= prompt("ingrese su contrasenia")
+    let anio = prompt ("ingrese su edad")
+
+    let repetido = false
+
+    for (const usuario of usuarios_alumnos) {
+        if (nombre == usuario.usuario) {
+           repetido = true
+        }
+    }
+    if(repetido){
+        alert("ese usuario esta ocupado")
+    }
+    else if (nombre && contrasenia && anio) {
+        let nuevoAlumno = new Alumno (anio,nombre, contrasenia)
+        alert("Alumno nuevo"+ nuevoAlumno.nombre + " " + nuevoAlumno.contrasenia + "tu edad es de" +" "+ nuevoAlumno.anio)
+        usuarios_alumnos.push(nuevoAlumno)
+        console.log(nuevoAlumno)
+        return nuevoAlumno
+
+    } else {
+        alert("Quien chota sos?")
+    }
+    
+}
+let alumno8 = crearAlumno()
+console.log(usuarios_alumnos)
+
+/*for (let i= 0 ; i <2; i++) {  
+   crearAlumno();
+    
+}*/
