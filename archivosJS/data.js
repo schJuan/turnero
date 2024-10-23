@@ -1,7 +1,7 @@
 class Alumno {
-    constructor( anio, usuario, contrasenia){
+    constructor( anio, usuario_l, contrasenia){
         this.anio = anio
-        this.usuario = usuario
+        this.usuario_l = usuario_l
         this.contrasenia = contrasenia
     }
 }

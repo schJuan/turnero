@@ -82,23 +82,23 @@ let turnoOchoHoras = ["juan"];
 
 
 function crearAlumno() {
-    let nombre = prompt("ingrese su usuario")
+    let usuario_l = prompt("ingrese su usuario")
     let contrasenia= prompt("ingrese su contrasenia")
     let anio = prompt ("ingrese su edad")
 
     let repetido = false
 
-    for (const usuario of usuarios_alumnos) {
-        if (nombre == usuario.usuario) {
+    for (const usuario_l of usuarios_alumnos) {
+        if (usuario_l == usuario_l.usuario_l) {
            repetido = true
         }
     }
     if(repetido){
         alert("ese usuario esta ocupado")
     }
-    else if (nombre && contrasenia && anio) {
-        let nuevoAlumno = new Alumno (anio,nombre, contrasenia)
-        alert("Alumno nuevo"+ nuevoAlumno.nombre + " " + nuevoAlumno.contrasenia + "tu edad es de" +" "+ nuevoAlumno.anio)
+    else if (usuario_l && contrasenia && anio) {
+        let nuevoAlumno = new Alumno (anio,usuario_l, contrasenia)
+        alert("Alumno nuevo "+ nuevoAlumno.usuario_l + " " + nuevoAlumno.contrasenia + "tu edad es de" +" "+ nuevoAlumno.anio)
         usuarios_alumnos.push(nuevoAlumno)
         console.log(nuevoAlumno)
         return nuevoAlumno
