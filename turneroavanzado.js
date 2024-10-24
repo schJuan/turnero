@@ -69,13 +69,8 @@ function confirmacion (usuario, arreglo){
     }
 }
 
-let turnoOchoHoras = ["juan"];
+let turnoOchoHoras = [];
 
-//let usuario = saludar();
-
-//let horario = pedirHorario ();
-
-//let andara = confirmacion (usuario, turnoOchoHoras);
 
 
 
@@ -84,12 +79,12 @@ let turnoOchoHoras = ["juan"];
 function crearAlumno() {
     let usuario_l = prompt("ingrese su usuario")
     let contrasenia= prompt("ingrese su contrasenia")
-    let anio = prompt ("ingrese su edad")
+    let anio = parseInt(prompt ("ingrese su edad"))
 
     let repetido = false
 
-    for (const usuario_l of usuarios_alumnos) {
-        if (usuario_l == usuario_l.usuario_l) {
+    for (const usuaRio of usuarios_alumnos) {
+        if (usuario_l == usuaRio.usuario_l) {
            repetido = true
         }
     }
@@ -104,12 +99,18 @@ function crearAlumno() {
         return nuevoAlumno
 
     } else {
-        alert("Quien chota sos?")
+        alert("Quien sos?")
     }
     
 }
 let alumno8 = crearAlumno()
-console.log(usuarios_alumnos)
+
+let usuario = saludar();
+
+let horario = pedirHorario ();
+
+let andara = confirmacion (usuario, turnoOchoHoras);
+
 
 /*for (let i= 0 ; i <2; i++) {  
    crearAlumno();
