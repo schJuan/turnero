@@ -46,9 +46,9 @@ function turno2(turnoPedido, horario) {
 
 }
 
-function esta_o_no(usuario, arreglo) {
-    for(let i of arreglo) {
-        if (i === usuario){
+function esta_o_no(usuario, turno) {
+    for(let i of turno) {
+        if (i.usuario_l == usuario.usuario_l){
             return true;
         }
         else {
@@ -57,33 +57,78 @@ function esta_o_no(usuario, arreglo) {
     }
 }
 
-function confirmacion (usuario, arreglo){
-    if (arreglo.length == 3) {
+function confirmacion (usuario, turno){
+    if (turno.length == 3) {
         alert ("turno lleno, te ganaro papi/mami/pape");
-    }else if (esta_o_no(usuario, arreglo)) {
+    }else if (esta_o_no(usuario, turno)) {
         alert ("Tantas ganas tenes de venir?? ya estas pa");
     }
     else{
-        arreglo.push(usuario);
-        console.log(turnoOchoHoras);
+        turno.push(usuario);
+        console.log(turnos);
     }
 }
 
-let turnoOchoHoras = [];
+
+
+let turnoHora8= [];
+let turnoHora9= [];
+let turnoHora10= [];
+let turnoHora11= [];
+let turnoHora12= [];
+let turnoHora13= [];
+let turnoHora14= [];
+let turnoHora15= [];
+let turnoHora16= [];
+let turnoHora17= [];
+let turnoHora18= [];
+let turnoHora19= [];
+let turnoHora20= [];
+let turnoHora21= [];
+
+const turnos = [
+    turnoHora8,
+    turnoHora9,
+    turnoHora10,
+    turnoHora11,
+    turnoHora12,
+    turnoHora13,
+    turnoHora14,
+    turnoHora15,
+    turnoHora16,
+    turnoHora17,
+    turnoHora18,
+    turnoHora19,
+    turnoHora20,
+    turnoHora21,
+]
+let turnoHora = "turnoHora"
+
+
+for (const turno of turnos) {
+
+    if (turno == turnoHora + "15" ) {
+        turno.push("palun")
+        console.log(turno)
+    }
+    
+        /*if (turno == turnos.includes(15)) {
+            turno.push("Palun")
+            console.log(turno)
+        }*/
+    
+}
 
 
 
-
-
-
-function crearAlumno() {
+function crearAlumno(arreglo) {
     let usuario_l = prompt("ingrese su usuario")
     let contrasenia= prompt("ingrese su contrasenia")
     let anio = parseInt(prompt ("ingrese su edad"))
 
     let repetido = false
 
-    for (const usuaRio of usuarios_alumnos) {
+    for (const usuaRio of arreglo) {
         if (usuario_l == usuaRio.usuario_l) {
            repetido = true
         }
@@ -94,7 +139,7 @@ function crearAlumno() {
     else if (usuario_l && contrasenia && anio) {
         let nuevoAlumno = new Alumno (anio,usuario_l, contrasenia)
         alert("Alumno nuevo "+ nuevoAlumno.usuario_l + " " + nuevoAlumno.contrasenia + "tu edad es de" +" "+ nuevoAlumno.anio)
-        usuarios_alumnos.push(nuevoAlumno)
+        arreglo.push(nuevoAlumno)
         console.log(nuevoAlumno)
         return nuevoAlumno
 
@@ -103,13 +148,44 @@ function crearAlumno() {
     }
     
 }
-let alumno8 = crearAlumno()
+/*let alumno8 = crearAlumno(usuarios_alumnos)
 
 let usuario = saludar();
 
 let horario = pedirHorario ();
 
-let andara = confirmacion (usuario, turnoOchoHoras);
+let andara = confirmacion (usuario, turnoHora8);*/
+
+
+
+function salirUsuario(arreglo, turno){
+    let afuera = true
+    while (afuera) {
+     let opcion = parseInt(prompt("Selecione 1 Crear usuario 2 Ingresar al turnero 3 salir"))
+     switch (opcion) {
+        case 1:
+            let alumno8 = crearAlumno(arreglo)
+            break;
+        case 2:
+            let usuario = saludar();
+
+            let horario = pedirHorario ();
+
+            let andara = confirmacion (usuario, turno);
+            break
+        case 3:
+            afuera = false
+            break
+        default:
+            break;
+     }
+
+
+
+}}
+
+//salirUsuario (usuarios_alumnos, turnoHora8)
+
 
 
 /*for (let i= 0 ; i <2; i++) {  
