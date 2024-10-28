@@ -6,10 +6,36 @@ function saludar() {
 
 }
 
+
+
+function inicioSecion(arregloDeUsuario) {
+    let megaUsuario = prompt("ingrese su usuario")
+    
+    if (megaUsuario != "" && megaUsuario ) {
+        megaUsuario = arregloDeUsuario.find((a)=> a.usuario_l == megaUsuario)
+        if (megaUsuario != undefined) {
+            let megaContrasenia = prompt ("Ingrese su contraseña")
+            if (megaContrasenia == megaUsuario.contrasenia) {
+                alert ("felicidades iniciaste secion")
+                return megaUsuario
+            }else {
+                alert ("usuario o contraseña incorrectos")
+            }
+        }else{
+            alert ("Usuario no encontrado")
+        }
+    } else {
+        alert ("flaco reacciona")
+    }
+
+
+}
+
+
 function pedirHorario (){
     let turno = prompt ("Pedi tu turno (elegi 1, 2 o 3 (no seas termo)) \n1)mañana de (8 a 13)  \n2)siesta de (14 a 18) \n3)noche de (19 a 21)");
     let horario = prompt ("A que hora venis???????");
-    if(turno == 1 && turno == 2 && turno == 3){
+    if(turno == 1 || turno == 2 || turno == 3){
         let opcion = turno2(turno, horario);
         if (opcion == 1) {
             alert(`Te espero a las ${horario}`);
@@ -46,9 +72,10 @@ function turno2(turnoPedido, horario) {
 
 }
 
-function esta_o_no(usuario, turno) {
-    for(let i of turno) {
-        if (i.usuario_l == usuario.usuario_l){
+function esta_o_no(usuario, turno, horario) {
+    
+    for(let i of turno[horario - 8]) {
+        if (i == usuario){
             return true;
         }
         else {
@@ -57,14 +84,15 @@ function esta_o_no(usuario, turno) {
     }
 }
 
-function confirmacion (usuario, turno){
+function confirmacion (usuario, turno, horario){
+    parseInt(horario)
     if (turno.length == 3) {
         alert ("turno lleno, te ganaro papi/mami/pape");
-    }else if (esta_o_no(usuario, turno)) {
+    }else if (esta_o_no(usuario, turno, horario)) {
         alert ("Tantas ganas tenes de venir?? ya estas pa");
     }
     else{
-        turno.push(usuario);
+        turno[horario - 8].push(usuario.usuario_l);
         console.log(turnos);
     }
 }
@@ -105,19 +133,7 @@ const turnos = [
 let turnoHora = "turnoHora"
 
 
-for (const turno of turnos) {
 
-    if (turno == turnoHora + "15" ) {
-        turno.push("palun")
-        console.log(turno)
-    }
-    
-        /*if (turno == turnos.includes(15)) {
-            turno.push("Palun")
-            console.log(turno)
-        }*/
-    
-}
 
 
 
@@ -148,13 +164,6 @@ function crearAlumno(arreglo) {
     }
     
 }
-/*let alumno8 = crearAlumno(usuarios_alumnos)
-
-let usuario = saludar();
-
-let horario = pedirHorario ();
-
-let andara = confirmacion (usuario, turnoHora8);*/
 
 
 
@@ -167,24 +176,28 @@ function salirUsuario(arreglo, turno){
             let alumno8 = crearAlumno(arreglo)
             break;
         case 2:
-            let usuario = saludar();
+            let usuario = inicioSecion(arreglo);
 
             let horario = pedirHorario ();
 
-            let andara = confirmacion (usuario, turno);
+            let andara = confirmacion (usuario, turno, horario);
+          
+            console.log (turno)
             break
         case 3:
             afuera = false
             break
+        
         default:
+
             break;
-     }
+     }  
 
 
 
 }}
 
-//salirUsuario (usuarios_alumnos, turnoHora8)
+salirUsuario (usuarios_alumnos, turnos)
 
 
 
@@ -192,3 +205,10 @@ function salirUsuario(arreglo, turno){
    crearAlumno();
     
 }*/
+/*let alumno8 = crearAlumno(usuarios_alumnos)
+
+let usuario = saludar();
+
+let horario = pedirHorario ();
+
+let andara = confirmacion (usuario, turnoHora8);*/
