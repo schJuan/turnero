@@ -1,12 +1,3 @@
-function saludar() {
-
-    alert("Bienvenido al turnero online");
-    let usuario = prompt ("ingerese su nombre de usuario");
-    return usuario;
-
-}
-
-
 
 function inicioSecion(arregloDeUsuario) {
     let megaUsuario = prompt("ingrese su usuario")
@@ -15,11 +6,12 @@ function inicioSecion(arregloDeUsuario) {
         megaUsuario = arregloDeUsuario.find((a)=> a.usuario_l == megaUsuario)
         if (megaUsuario != undefined) {
             let megaContrasenia = prompt ("Ingrese su contraseña")
-            if (megaContrasenia == megaUsuario.contrasenia) {
+            if (megaContrasenia === megaUsuario.contrasenia) {
                 alert ("felicidades iniciaste secion")
                 return megaUsuario
             }else {
                 alert ("usuario o contraseña incorrectos")
+                
             }
         }else{
             alert ("Usuario no encontrado")
@@ -130,12 +122,6 @@ const turnos = [
     turnoHora20,
     turnoHora21,
 ]
-let turnoHora = "turnoHora"
-
-
-
-
-
 
 function crearAlumno(arreglo) {
     let usuario_l = prompt("ingrese su usuario")
@@ -154,7 +140,7 @@ function crearAlumno(arreglo) {
     }
     else if (usuario_l && contrasenia && anio) {
         let nuevoAlumno = new Alumno (anio,usuario_l, contrasenia)
-        alert("Alumno nuevo "+ nuevoAlumno.usuario_l + " " + nuevoAlumno.contrasenia + "tu edad es de" +" "+ nuevoAlumno.anio)
+        alert("Alumno nuevo "+ nuevoAlumno.usuario_l + " " + nuevoAlumno.contrasenia + "tu edad es de" + " " + nuevoAlumno.anio)
         arreglo.push(nuevoAlumno)
         console.log(nuevoAlumno)
         return nuevoAlumno
@@ -164,8 +150,11 @@ function crearAlumno(arreglo) {
     }
     
 }
-
-
+/*for (let horario = 3; horario < turnos.length; i++) {
+    const limite = turnos[horario];
+    break
+    
+}*/
 
 function salirUsuario(arreglo, turno){
     let afuera = true
@@ -173,14 +162,14 @@ function salirUsuario(arreglo, turno){
      let opcion = parseInt(prompt("Selecione 1 Crear usuario 2 Ingresar al turnero 3 salir"))
      switch (opcion) {
         case 1:
-            let alumno8 = crearAlumno(arreglo)
+            crearAlumno(arreglo)
             break;
         case 2:
             let usuario = inicioSecion(arreglo);
 
             let horario = pedirHorario ();
 
-            let andara = confirmacion (usuario, turno, horario);
+            confirmacion (usuario, turno, horario);
           
             console.log (turno)
             break
@@ -198,17 +187,3 @@ function salirUsuario(arreglo, turno){
 }}
 
 salirUsuario (usuarios_alumnos, turnos)
-
-
-
-/*for (let i= 0 ; i <2; i++) {  
-   crearAlumno();
-    
-}*/
-/*let alumno8 = crearAlumno(usuarios_alumnos)
-
-let usuario = saludar();
-
-let horario = pedirHorario ();
-
-let andara = confirmacion (usuario, turnoHora8);*/
