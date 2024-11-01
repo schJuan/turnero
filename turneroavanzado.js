@@ -67,7 +67,7 @@ function turno2(turnoPedido, horario) {
 function esta_o_no(usuario, turno, horario) {
     
     for(let i of turno[horario - 8]) {
-        if (i == usuario){
+        if (i == usuario.usuario_l){
             return true;
         }
         else {
@@ -186,4 +186,4 @@ function salirUsuario(arreglo, turno){
 
 }}
 
-salirUsuario (usuarios_alumnos, turnos)
+//salirUsuario (usuarios_alumnos, turnos)

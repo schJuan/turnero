@@ -1,0 +1,45 @@
+.calendario {
+    width: 200px;
+    border: 5px solid black;
+    margin: 10px;
+    padding: 5px;
+}
+h1{
+    color:rgb(255, 0, 0);
+    font-size: 60px;
+    background-color: black;
+}
+.hora{
+    background-color: brown;
+    margin: 5px;
+    padding: 5px;
+}
+
+.Hora{
+    width: 200px;
+    border-radius: 5%;
+    border: 5px solid black;
+    margin: 5px;
+    padding: 5px;
+
+}
+.fechas{
+   margin: 10px 0px 0px 50px;
+    
+}
+.fechas1{
+    margin: 10px 0px 0px 50px;
+    position: absolute;
+    right: 50px;
+    
+   
+}
+.fechaPadre{
+    display: flex;
+    position: relative;
+}
+
+.turno{
+    display: flex;
+}
+
