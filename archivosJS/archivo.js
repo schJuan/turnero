@@ -16,3 +16,19 @@ function iniciarSesion(){
         
     }
 }
+
+let reservar = document.getElementById ("reservar")
+let crearUser = document.getElementById("crearUser");
+
+
+reservar.addEventListener('click',crearUsuario)
+
+function crearUsuario() {
+    let box = document.createElement('div');
+    box.classList.add('canival')
+    crearUser.appendChild(box)
+}
+
+desaparecer.addEventListener("click", ()=>{
+    crearUser.innerHTML = "";
+})
