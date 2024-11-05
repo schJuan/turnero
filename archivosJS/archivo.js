@@ -1,34 +1,79 @@
-function iniciarSesion(){
-    avisos.innerHTML
+let incio_sesion = new Array()
 
+let input_boton = document.getElementById("inicioSesion")
+input_boton.addEventListener("click",()=>{
+    
     let input_usuario = document.getElementById("usuario").value
     let input_contrasenia = document.getElementById("contrasenia").value
-    let input_boton = document.getElementById("inicioSecion").value
-    
-    let incio_sesion = new Array()
-    if (!input_usuario) {
-        incio_sesion.push("usuario")
-    }
-    if (input_contrasenia) {
-        incio_sesion.push("contrasenia")
-    }
-    if (input_boton) {
+    input_boton.classList.add(`button_inicio`)
+    if (input_usuario && input_contrasenia){
+        incio_sesion.push(input_usuario)
+        console.log(input_usuario)
         
     }
-}
+    document.getElementById("usuario").value = ""
+    document.getElementById("contrasenia").value = ""
+})
+
+
+
+let turno8 = []
+
 
 let reservar = document.getElementById ("reservar")
 let crearUser = document.getElementById("crearUser");
+let cerrarSesion = document.getElementById("cerrarSesion")
+
+cerrarSesion.addEventListener("click", ()=>{
+    cerrarSesion.removeEventListener(`click`)
+    incio_sesion = []
+})
+
+
+
+function averiguarUsuario(){
+    let variable = 0
+    for (let index = 0; index < turno8.length; index++) {
+        if (turno8[index] === incio_sesion[0]) {
+             variable++
+            
+        }
+        
+    }
+    return variable
+}
 
 
 reservar.addEventListener('click',crearUsuario)
 
+
 function crearUsuario() {
-    let box = document.createElement('div');
-    box.classList.add('canival')
-    crearUser.appendChild(box)
+    let falso = averiguarUsuario()
+    if(falso === 0){
+        
+        turno8.push(incio_sesion [0])
+    }
+    crearUser.innerHTML = ""
+    for (let index = 0; index < turno8.length; index++) {
+        let p = document.createElement("p")
+        p.innerHTML=turno8[index]
+        crearUser.appendChild(p)
+    }
+    
 }
 
 desaparecer.addEventListener("click", ()=>{
-    crearUser.innerHTML = "";
+    let crearUser = document.getElementById("crearUser");
+    let eliminar = turno8.findIndex((a)=> a === incio_sesion[0])
+    
+    if (eliminar != -1) {
+        turno8.splice(eliminar,1)
+        
+    }
+    crearUser.innerHTML = ""
+    for (let index = 0; index < turno8.length; index++) {
+        let p = document.createElement("p")
+        p.innerHTML=turno8[index]
+        crearUser.appendChild(p)
+    }
 })
