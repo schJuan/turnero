@@ -51,12 +51,9 @@ reservar.addEventListener('click', crearUsuario)
 
 function crearUsuario() {
     let falso = averiguarUsuario()
-    if(falso === 0 || !undefined){
-        
-        turno8.push(incio_sesion [0])
-
-    }else{
-        alert("Falta usuario o contraseña")
+    if (falso === 0 && !undefined ){
+       
+        turno8.push(incio_sesion[0])
     }
     crearUser.innerHTML = ""
     for (let index = 0; index < turno8.length; index++) {

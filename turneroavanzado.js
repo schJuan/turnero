@@ -1,5 +1,5 @@
 
-function inicioSecion(arregloDeUsuario) {
+/*function inicioSecion(arregloDeUsuario) {
     let megaUsuario = prompt("ingrese su usuario")
     
     if (megaUsuario != "" && megaUsuario ) {
@@ -156,7 +156,7 @@ function crearAlumno(arreglo) {
     
 }*/
 
-function salirUsuario(arreglo, turno){
+/*function salirUsuario(arreglo, turno){
     let afuera = true
     while (afuera) {
      let opcion = parseInt(prompt("Selecione 1 Crear usuario 2 Ingresar al turnero 3 salir"))
@@ -184,6 +184,6 @@ function salirUsuario(arreglo, turno){
 
 
 
-}}
+}}*/
 
 //salirUsuario (usuarios_alumnos, turnos)

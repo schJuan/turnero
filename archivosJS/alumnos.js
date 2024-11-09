@@ -1,4 +1,4 @@
-const alumnos = [ ]
+/*const alumnos = [ ]
 
 let crearalumno = prompt("1) Crea tu usuario 2) Ingresar")
 function usuario_logeado (){
@@ -15,4 +15,4 @@ function usuario_logeado (){
 }
 alumnos.push(crearalumno)
 usuario_logeado()
-alert(alumnos)
+alert(alumnos)*/
