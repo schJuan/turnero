@@ -2,12 +2,26 @@ let incio_sesion = new Array()
 
 let input_boton = document.getElementById("inicioSesion")
 input_boton.addEventListener("click",()=>{
+    let profe =false
     let input_usuario = document.getElementById("usuario").value
     let input_contrasenia = document.getElementById("contrasenia").value
     input_boton.classList.add(`button_inicio`) 
     if (input_usuario && input_contrasenia != ""){
-        incio_sesion.push(input_usuario)
-        console.log(input_usuario)
+        for (let i = 0; i < usuarios_profes.length; i++) {
+            if (input_usuario === usuarios_profes[i].nombre) {
+                profe = true
+                input_usuario.push(usuarios_profes)
+            }
+           
+        }
+        for (let i = 0; i < input_usuario.length; i++) {
+            incio_sesion.push(input_usuario)
+                
+        } 
+            alert("hola profe")
+            
+            console.log(input_usuario)
+            alert("Hola mortal")
         
     }else{
         alert("ingresa un usuario")
@@ -28,7 +42,7 @@ class Profesores {
 
 let profe1 = new Profesores("Fcatelott", "contraseña123");
 let profe2 = new Profesores("Tcatelott", "contraseña321");
-const usuarios_alumnos = [profe1, profe2,]
+const usuarios_profes = [profe1, profe2,]
 
 
 
