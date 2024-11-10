@@ -18,6 +18,22 @@ input_boton.addEventListener("click",()=>{
 
 
 
+class Profesores {
+    constructor( usuario_l, contrasenia) {
+       
+        this.usuario_l = usuario_l
+        this.contrasenia = contrasenia
+    }
+}
+
+let profe1 = new Profesores("Fcatelott", "contraseña123");
+let profe2 = new Profesores("Tcatelott", "contraseña321");
+const usuarios_alumnos = [profe1, profe2,]
+
+
+
+
+
 let turno8 = []
 
 let reservar = document.getElementById ("reservar")
