@@ -1,15 +1,20 @@
 let incio_sesion = new Array()
-class Profesores {
-    constructor( usuario, contrasenia) {
-       
-        this.usuario = usuario
+
+
+let profe1 = new Usuario("Franco","catelotti","contraseña123","29","3454558778");
+let profe2 = new Usuario("Tcatelott", "contraseña321");
+const usuarios = [profe1, profe2,]
+class Usuario {
+    constructor (nombre,apellido,contrasenia,edad,telefono){
+        this.admin = false
+        this.nombre = nombre
+        this.apellido = apellido
+        this.usuario = null
         this.contrasenia = contrasenia
+        this.edad = edad
+        this.telefono = telefono
     }
 }
-
-let profe1 = new Profesores("Fcatelott", "contraseña123");
-let profe2 = new Profesores("Tcatelott", "contraseña321");
-const usuarios_profes = [profe1, profe2,]
 
 let input_boton = document.getElementById("inicioSesion")
 input_boton.addEventListener("click",()=>{
@@ -17,7 +22,23 @@ input_boton.addEventListener("click",()=>{
     let input_usuario = document.getElementById("usuario").value
     let input_contrasenia = document.getElementById("contrasenia").value
     input_boton.classList.add(`button_inicio`) 
-    if (input_usuario && input_contrasenia != ""){
+    for (let index = 0; index < usuarios.length; index++) {
+        if(input_usuario === usuarios[index].usuario && input_contrasenia === usuarios[index].contrasenia){
+            alert("hola profe")
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*if (input_usuario && input_contrasenia != ""){
         document.getElementById("usuario").value = ""
         document.getElementById("contrasenia").value = ""
         for (let i = 0; i < usuarios_profes.length; i++) {
@@ -41,7 +62,7 @@ input_boton.addEventListener("click",()=>{
         
     }else{
         alert("ingresa un usuario")
-    }
+    }*/
    
 })
 
@@ -56,6 +77,7 @@ let turno8 = []
 
 let reservar = document.getElementById ("reservar")
 let crearUser = document.getElementById("crearUser");
+crearUser.classList.add("alumnos")
 let cerrarSesion = document.getElementById("cerrarSesion")
 
 
@@ -80,49 +102,40 @@ function averiguarUsuario(){
     return variable
 }
 
+function verDisponible(turno) {
+    let VariableDisponible = BajaSubeDisponibilidad(turno)
+    let pa = document.getElementById(`Ndisponible`)
+    pa.innerHTML = VariableDisponible
+    
+}
+verDisponible(turno8)
 
 reservar.addEventListener('click',()=>{
     turno8.length
-    crearUsuario()
-    
-    let disponible = document.getElementById("disponible8")
-    let pa = document.createElement(`p`)
-    switch (turno8.length) {
-        case 0:
-            disponible.innerHTML = ""
-            pa.innerHTML = turno8.length
-            disponible.appendChild(pa)
-
-            break;
-    
-        case 1:
-        
-            pa.innerHTML = turno8.length
-            disponible.appendChild(pa)
-            break;
-    }
-    
-        
-    console.log(disponible)
-    console.log(turno8.length)
-
+    crearUsuario(turno8)
+    let pa = document.getElementById(`Ndisponible`)
+    let VariableDisponible = BajaSubeDisponibilidad(turno8)
+    pa.innerHTML = VariableDisponible
 
 })
 
 
-function crearUsuario() {
+function crearUsuario(turno) {
     
     let falso = averiguarUsuario()
-    if (falso !== 0 ){
+    /*if (falso !== 0 ){
         alert("no es posible agregar, ya estas")
-    } else if (incio_sesion.length === 0){
+    } else*/ if (incio_sesion.length === 0){
         alert ("Debes iniciar sesion")
+    }else if (turno.length == 12){
+        alert("turno lleno")
     }else{
     
         crearUser.innerHTML = ""
         turno8.push(incio_sesion[0])
         for (let index = 0; index < turno8.length; index++) {
             let p = document.createElement(`p`)
+
             p.innerHTML = turno8[index]
             crearUser.appendChild(p)
 
@@ -134,6 +147,7 @@ function crearUsuario() {
 }
 
 desaparecer.addEventListener("click", ()=>{
+    
     let crearUser = document.getElementById("crearUser");
     let eliminar = turno8.findIndex((a)=> a === incio_sesion[0])
     if (eliminar != -1) {
@@ -145,6 +159,9 @@ desaparecer.addEventListener("click", ()=>{
         let p = document.createElement("p")
         p.innerHTML=turno8[index]
         crearUser.appendChild(p)
-    }
+    }  
+    let pa = document.getElementById(`Ndisponible`)
+    let VariableDisponible = BajaSubeDisponibilidad(turno8)
+    pa.innerHTML = VariableDisponible 
 })
 

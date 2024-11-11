@@ -65,3 +65,10 @@ h1{
 .usuarioYcontrsenia{
     display: none;
 }
+.alumnos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+    margin: 5px;
+}
