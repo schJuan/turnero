@@ -1,11 +1,27 @@
-/*class Alumno {
-    constructor( anio, usuario_l, contrasenia){
-        this.anio = anio
-        this.usuario_l = usuario_l
+class Usuario {
+    constructor(nombre, apellido, contrasenia, edad, telefono) {
+        this.admin = false
+        this.nombre = nombre
+        this.apellido = apellido
+        this.usuario = null
         this.contrasenia = contrasenia
+        this.edad = edad
+        this.telefono = telefono
+    }
+    usuarioAdmin() {
+        if (this.admin) {
+            return this.admin = false
+        } else {
+            return this.admin = true
+        }
+    }
+    NombreUsuario() {
+        return this.usuario = this.nombre.charAt(0) + this.apellido.substring(0, 8)
     }
 }
 
-let alumno1 = new Alumno (22, "Jschlott", "Megustalacoca");
-let alumno2 = new Alumno (25, "Lgonzales", "contraseña321" );
-const usuarios_alumnos = [alumno1,  alumno2,];*/
+let profe1 = new Usuario("Franco", "catelotti", "contraseña123", "29", "3454558778");
+profe1.usuarioAdmin()
+profe1.NombreUsuario()
+console.log(profe1)
+const usuarios = [profe1]
