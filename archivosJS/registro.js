@@ -16,7 +16,7 @@ button.addEventListener("click",()=>{
         let usuario = new Usuario(Nombre, apellido, contrasenia, edad, telefono)
 
     }else{
-        for (let index = 0; index < array.length; index++) {
+        for (let index = 0; index < usuario.length; index++) {
             
             
         }
@@ -24,4 +24,13 @@ button.addEventListener("click",()=>{
 })
 
 
-
+function ChekearDatos(nombre, apellido, contrasenia,edad,telefono) {
+    let msj = ""
+    if ((nombre) && (apellido) && (contrasenia) && (telefono))
+    if (isNaN(parseInt(edad))){
+        msj = "No ingresaste la edad"
+    }else{
+        msj = "Debes ingresar todos los datos"
+    }
+    return msj
+}
