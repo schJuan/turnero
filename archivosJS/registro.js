@@ -12,6 +12,7 @@ button.addEventListener("click",()=>{
     let user = encontrar_usuario(Nombre, apellido, contrasenia, contrasenia2, edad, telefono)
     let msj = Validar_usuario(Nombre, apellido,contrasenia,contrasenia2,edad,telefono)
     
+<<<<<<< HEAD
     if (user) {
         alert("hola")
     } else {
@@ -21,10 +22,24 @@ button.addEventListener("click",()=>{
         let nuevo_usuario = new Usuario(Nombre, apellido, contrasenia, contrasenia2, edad, telefono)
         guardar_usuario(nuevo_usuario)
         alert("creado")
+=======
+    
+
+    let msj = new Array
+    if(msj.length == 0 ){
+        let usuario = new Usuario(Nombre, apellido, contrasenia, edad, telefono)
+
+    }else{
+        for (let index = 0; index < usuario.length; index++) {
+            
+            
+        }
+>>>>>>> 0971be8ba4f6f1d9fe959e982474f3c44e5c08d1
     }
 })
 
 
+<<<<<<< HEAD
 
 
 
@@ -112,4 +127,15 @@ function Validar_usuario() {
         alert("error num")
     }
     return msj 
+=======
+function ChekearDatos(nombre, apellido, contrasenia,edad,telefono) {
+    let msj = ""
+    if ((nombre) && (apellido) && (contrasenia) && (telefono))
+    if (isNaN(parseInt(edad))){
+        msj = "No ingresaste la edad"
+    }else{
+        msj = "Debes ingresar todos los datos"
+    }
+    return msj
+>>>>>>> 0971be8ba4f6f1d9fe959e982474f3c44e5c08d1
 }
