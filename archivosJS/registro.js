@@ -127,15 +127,5 @@ function Validar_usuario() {
         alert("error num")
     }
     return msj 
-=======
-function ChekearDatos(nombre, apellido, contrasenia,edad,telefono) {
-    let msj = ""
-    if ((nombre) && (apellido) && (contrasenia) && (telefono))
-    if (isNaN(parseInt(edad))){
-        msj = "No ingresaste la edad"
-    }else{
-        msj = "Debes ingresar todos los datos"
-    }
-    return msj
->>>>>>> 0971be8ba4f6f1d9fe959e982474f3c44e5c08d1
+
 }
