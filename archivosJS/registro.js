@@ -12,7 +12,7 @@ button.addEventListener("click",()=>{
     let user = encontrar_usuario(Nombre, apellido, contrasenia, contrasenia2, edad, telefono)
     let msj = Validar_usuario(Nombre, apellido,contrasenia,contrasenia2,edad,telefono)
     
-<<<<<<< HEAD
+
     if (user) {
         alert("hola")
     } else {
@@ -22,7 +22,7 @@ button.addEventListener("click",()=>{
         let nuevo_usuario = new Usuario(Nombre, apellido, contrasenia, contrasenia2, edad, telefono)
         guardar_usuario(nuevo_usuario)
         alert("creado")
-=======
+
     
 
     let msj = new Array
@@ -34,12 +34,12 @@ button.addEventListener("click",()=>{
             
             
         }
->>>>>>> 0971be8ba4f6f1d9fe959e982474f3c44e5c08d1
+
     }
-})
+}
 
 
-<<<<<<< HEAD
+
 
 
 
