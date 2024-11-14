@@ -25,3 +25,10 @@ profe1.usuarioAdmin()
 profe1.NombreUsuario()
 console.log(profe1)
 const usuarios = [profe1]
+//let AlumnosProfes = Json.parse(localStorage.getItem(usuarios))
+
+/*if(!AlumnosProfes){
+
+    const  Usu_arios = new Array();
+    localStorage.setItem(usuarios,JSON.stringify(Usu_arios))
+}*/
