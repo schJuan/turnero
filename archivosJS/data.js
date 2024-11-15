@@ -16,7 +16,7 @@ class Usuario {
         }
     }
     NombreUsuario() {
-        return this.usuario = this.nombre.charAt(0) + this.apellido.substring(0, 8)
+        return this.usuario = this.nombre.substring(0, 1) + this.apellido.substring(0, 8)
     }
 }
 

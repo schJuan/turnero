@@ -1,20 +1,24 @@
-let incio_sesion = new Array()
+const key_sesion = "key_sesion"
 
 
 
 let input_boton = document.getElementById("inicioSesion")
 input_boton.addEventListener("click",()=>{
+    let sesion = guardar_usuario(key_sesion)
+    let usuario_guardados = guardar_usuario(key_usuario)
     let input_usuario = document.getElementById("usuario").value
     let input_contrasenia = document.getElementById("contrasenia").value
     let verificacion  = 0
-    for (let index = 0; index < usuarios.length; index++) {
-        if(input_usuario === usuarios[index].usuario && input_contrasenia === usuarios[index].contrasenia){
-            if (usuarios[index].admin) {
+    for (let index = 0; index < usuario_guardados.length; index++) {
+        if(input_usuario === usuario_guardados[index].usuario && input_contrasenia === usuario_guardados[index].contrasenia){
+            if (usuario_guardados[index].admin) {
               verificacion = 2
-                incio_sesion.push(usuarios[index])
+                sesion.push(usuario_guardados[index])
+                localStorage.setItem(key_sesion, JSON.stringify(sesion))
             }else{
                 verificacion = 1
-                incio_sesion.push(usuarios[index])
+                sesion.push(usuario_guardados[index])
+                localStorage.setItem(key_sesion, JSON.stringify(sesion))
             }
         }
     }
@@ -49,17 +53,18 @@ let cerrarSesion = document.getElementById("cerrarSesion")
 
 
 cerrarSesion.addEventListener("click", ()=>{
-    
+    let sesion = new Array ()
+    localStorage.setItem(key_sesion, JSON.stringify(sesion))
     input_boton.classList.remove(`button_inicio`)
-    incio_sesion = []
 })
 
 
 
 function averiguarUsuario(){
+    let sesionIniciada = guardar_usuario(key_sesion)
     let variable = 0
     for (let index = 0; index < turno8.length; index++) {
-        if (turno8[index] === incio_sesion[0].usuario) {
+        if (turno8[index] === sesionIniciada[0].usuario) {
              variable++
             
         }
@@ -87,18 +92,18 @@ reservar.addEventListener('click',()=>{
 
 
 function crearUsuario(turno) {
-    
+    let sesionIniciada = guardar_usuario(key_sesion)
     let falso = averiguarUsuario()
     if (falso !== 0 ){
         alert("no es posible agregar, ya estas")
-    } else if (incio_sesion.length === 0){
+    } else if (sesionIniciada.length === 0){
         alert ("Debes iniciar sesion")
     }else if (turno.length == 12){
         alert("turno lleno")
     }else{
     
         crearUser.innerHTML = ""
-        turno8.push(incio_sesion[0].usuario)
+        turno8.push(sesionIniciada[0].usuario)
         for (let index = 0; index < turno8.length; index++) {
             let p = document.createElement(`p`)
 
@@ -113,9 +118,9 @@ function crearUsuario(turno) {
 }
 
 desaparecer.addEventListener("click", ()=>{
-    
+    let sesionIniciada = guardar_usuario(key_sesion)
     let crearUser = document.getElementById("crearUser");
-    let eliminar = turno8.findIndex((a)=> a === incio_sesion[0].usuario)
+    let eliminar = turno8.findIndex((a)=> a === sesionIniciada[0].usuario)
     if (eliminar != -1) {
         turno8.splice(eliminar,1)
         

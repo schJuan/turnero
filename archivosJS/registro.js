@@ -1,60 +1,41 @@
 const key_usuario = "key_usuario"
-
 let button = document.getElementById (`RegistroCompletado`)
 
-button.addEventListener("click",()=>{
+    button.addEventListener("click",()=>{
     
+    let usuario_mensaje = Validar_usuario()
+    console.log(usuario_mensaje)
+    let usuario_guardados = guardar_usuario()
+    if (usuario_mensaje instanceof Usuario) {
+        usuario_mensaje.NombreUsuario()
+        usuario_guardados.push(usuario_mensaje)
+        localStorage.setItem(key_usuario,JSON.stringify(usuario_guardados))
+        alert("Se creo correcto wacho")
     
-
-    if (user) {
-        alert("hola")
     } else {
-        alert("chau")
-    }
-    if (msj == " ") {
-        let nuevo_usuario = new Usuario(Nombre, apellido, contrasenia, contrasenia2, edad, telefono)
-        guardar_usuario(nuevo_usuario)
-        alert("creado")
-    }
-
-     
-    if(msj.length == 0 ){
-        let usuario = new Usuario(Nombre, apellido, contrasenia, edad, telefono)
-
-    }else{
-        for (let index = 0; index < usuario.length; index++) {
-            
+        let formularioIncompleto = document.getElementById("formularioIncompleto")
+        for (let index = 0; index < usuario_mensaje.length; index++) {
+          let li = document.createElement(`li`)
+          li.innerHTML = usuario_mensaje[index]
+          formularioIncompleto.appendChild(li)
             
         }
-        
     }
+    
 }
 )
 
 
 
-
-
-
-
-
-
-
-
-
-function guardar_usuario (usuarios){
-    let i = localStorage.getItem(key_usuario)
+function guardar_usuario (){
+    let i = JSON.parse(localStorage.getItem(key_usuario))
     if (i) {
-        let alumnos = JSON.parse(localStorage.getItem(key_usuario))
-        alumnos.push(usuarios)
-        localStorage.setItem(key_usuario,alumnos)
+
+       return i
 
     } else {
-        let alumnos = new Array()
-        alumnos.push(usuarios)
-        let coleccion = JSON.stringify(alumnos)
-        localStorage.setItem(key_usuario,coleccion)
-        alert("usuario guardado")
+        i = new Array ()
+        return i 
     }
 }
 
@@ -75,13 +56,6 @@ function encontrar_usuario(usuarios) {
         }
     }
 }
-
-
-
-
-
-
-
 
 
 function Validar_usuario() {
@@ -122,7 +96,7 @@ function Validar_usuario() {
     }
     
     if (msj.length == 0) {
-        return new Usuario
+        return new Usuario(Nombre, apellido, contrasenia, edad, telefono)
     }else{
         return msj
     }
