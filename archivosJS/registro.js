@@ -1,4 +1,4 @@
-const key_usuario = "key_usuario"
+
 let button = document.getElementById (`RegistroCompletado`)
 
     button.addEventListener("click",()=>{

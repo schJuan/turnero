@@ -27,7 +27,7 @@ input_boton.addEventListener("click",()=>{
         input_boton.classList.add(`button_inicio`)
         
     } else if (verificacion == 1) {
-        alert("hola putito")
+        alert("hola Usuario")
         input_boton.classList.add(`button_inicio`)
 
 
