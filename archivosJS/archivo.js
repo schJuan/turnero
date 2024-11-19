@@ -36,13 +36,6 @@ input_boton.addEventListener("click",()=>{
     } 
 })
 
-
-
-
-
-
-
-
 let turno8 = []
 
 let reservar = document.getElementById ("reservar")
@@ -50,14 +43,11 @@ let crearUser = document.getElementById("crearUser");
 crearUser.classList.add("alumnos")
 let cerrarSesion = document.getElementById("cerrarSesion")
 
-
-
 cerrarSesion.addEventListener("click", ()=>{
     let sesion = new Array ()
     localStorage.setItem(key_sesion, JSON.stringify(sesion))
     input_boton.classList.remove(`button_inicio`)
 })
-
 
 
 function averiguarUsuario(){
