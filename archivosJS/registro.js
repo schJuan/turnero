@@ -27,17 +27,7 @@ let button = document.getElementById (`RegistroCompletado`)
 
 
 
-function guardar_usuario (){
-    let i = JSON.parse(localStorage.getItem(key_usuario))
-    if (i) {
 
-       return i
-
-    } else {
-        i = new Array ()
-        return i 
-    }
-}
 
 
 function encontrar_usuario(usuarios) {

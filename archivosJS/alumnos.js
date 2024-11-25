@@ -1,4 +1,5 @@
 function BajaSubeDisponibilidad(turno) {
+    console.log(turno)
     let numero; 
     switch (turno.length) {
         case 0:

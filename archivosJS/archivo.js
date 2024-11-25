@@ -1,10 +1,91 @@
+const url_turno = "./turnos.json"
 const key_sesion = "key_sesion"
+let sesion = JSON.parse(localStorage.getItem(key_sesion)) || []
+
+let horarios = document.getElementById("horarios")
+
+const pedirTurno = async () =>{
+    turnos.forEach(turno => {
+        
+        let diaHora = document.createElement("div")
+        diaHora.classList.add ("Hora")
+        let divUsers = document.createElement("div")
+        divUsers.innerHTML = ""
+        divUsers.id = "crearUser"
+        divUsers.classList.add("alumnos")
+        for (let index = 0; index < turno.usuarios.length; index++) {
+            let p = document.createElement("p")
+            p.innerHTML = turno.usuarios[index]
+            divUsers.appendChild(p)
+
+        }
+        crear_vistaTurno(turno,diaHora,divUsers)
+        diaHora.appendChild(divUsers)
+        horarios.appendChild(diaHora)
+        
+    });
+    
+}
+
+function crear_vistaTurno(turno,div,divUser){
+    let p = document.createElement("p")
+    p.id="Ndisponible"
+    let divDispo = document.createElement("div")
+    divDispo.id = "disponibles"
+    let button = document.createElement("button")
+    button.id = "reservar"
+    button.innerHTML ="Reservar"
+    button.addEventListener('click', () => {
+        crearUsuario(turno.usuarios,divUser)
+        let VariableDisponible = BajaSubeDisponibilidad(turno.usuarios)
+        p.innerHTML = VariableDisponible
+        localStorage.setItem(key_turnos, JSON.stringify(turnos))
+    })
+    let button_Desreservar = document.createElement("button")
+    button_Desreservar.id = "desaparecer"
+    button_Desreservar.innerHTML = "Desreservar"
+    button_Desreservar.addEventListener("click", () => {
+        let sesionIniciada = guardar_usuario(key_sesion)
+        //let crearUser = document.getElementById("crearUser");
+        turno.usuarios = turno.usuarios.filter((a) => a !== sesionIniciada[0].usuario)
+        localStorage.setItem(key_turnos, JSON.stringify(turnos))
+        divUser.innerHTML = ""
+        for (let index = 0; index < turno.usuarios.length; index++) {
+            let p = document.createElement("p")
+            p.innerHTML = turno.usuarios[index]
+            divUser.appendChild(p)
+        }
+
+        let VariableDisponible = BajaSubeDisponibilidad(turno.usuarios)
+        p.innerHTML = VariableDisponible
+    })
+    
+    verDisponible(turno.usuarios, p)
+    div.innerHTML = `
+                    <h2>Musculacion ${turno.nombre} </h2>
+                    <h2>Reserva el turno</h2>
+                    <h3>Capacidad: 12</h3>
+                    <h3>Disponibles</h3>
+                   
+                        
+                    `
+    divDispo.appendChild(p)
+    div.appendChild(divDispo)
+    div.appendChild(button)
+    div.appendChild(button_Desreservar)
+    
+    poderProfe(div,divUser,turno.usuarios)
+    
+}
+
+
+pedirTurno()
 
 
 
 let input_boton = document.getElementById("inicioSesion")
 input_boton.addEventListener("click",()=>{
-    let sesion = guardar_usuario(key_sesion)
+    
     let usuario_guardados = guardar_usuario(key_usuario)
     let input_usuario = document.getElementById("usuario").value
     let input_contrasenia = document.getElementById("contrasenia").value
@@ -24,11 +105,11 @@ input_boton.addEventListener("click",()=>{
     }
     if (verificacion == 2) {
         alert("hola profe")
-        input_boton.classList.add(`button_inicio`)
+        input_boton.classList.add(`noVer`)
         
     } else if (verificacion == 1) {
         alert("hola Usuario")
-        input_boton.classList.add(`button_inicio`)
+        input_boton.classList.add(`noVer`)
 
 
     } else {
@@ -36,25 +117,24 @@ input_boton.addEventListener("click",()=>{
     } 
 })
 
-let turno8 = []
 
-let reservar = document.getElementById ("reservar")
-let crearUser = document.getElementById("crearUser");
-crearUser.classList.add("alumnos")
+
+
+
 let cerrarSesion = document.getElementById("cerrarSesion")
 
 cerrarSesion.addEventListener("click", ()=>{
     let sesion = new Array ()
     localStorage.setItem(key_sesion, JSON.stringify(sesion))
-    input_boton.classList.remove(`button_inicio`)
+    input_boton.classList.remove(`noVer`)
 })
 
 
-function averiguarUsuario(){
+function averiguarUsuario(turno){
     let sesionIniciada = guardar_usuario(key_sesion)
     let variable = 0
-    for (let index = 0; index < turno8.length; index++) {
-        if (turno8[index] === sesionIniciada[0].usuario) {
+    for (let index = 0; index < turno.length; index++) {
+        if (turno[index] === sesionIniciada[0].usuario) {
              variable++
             
         }
@@ -63,27 +143,19 @@ function averiguarUsuario(){
     return variable
 }
 
-function verDisponible(turno) {
+function verDisponible(turno,pa) {
     let VariableDisponible = BajaSubeDisponibilidad(turno)
-    let pa = document.getElementById(`Ndisponible`)
     pa.innerHTML = VariableDisponible
-    
+   
 }
-verDisponible(turno8)
-
-reservar.addEventListener('click',()=>{
-    turno8.length
-    crearUsuario(turno8)
-    let pa = document.getElementById(`Ndisponible`)
-    let VariableDisponible = BajaSubeDisponibilidad(turno8)
-    pa.innerHTML = VariableDisponible
-
-})
 
 
-function crearUsuario(turno) {
+
+
+
+function crearUsuario(turno,divUser) {
     let sesionIniciada = guardar_usuario(key_sesion)
-    let falso = averiguarUsuario()
+    let falso = averiguarUsuario(turno)
     if (falso !== 0 ){
         alert("no es posible agregar, ya estas")
     } else if (sesionIniciada.length === 0){
@@ -93,12 +165,12 @@ function crearUsuario(turno) {
     }else{
     
         crearUser.innerHTML = ""
-        turno8.push(sesionIniciada[0].usuario)
-        for (let index = 0; index < turno8.length; index++) {
+        turno.push(sesionIniciada[0].usuario)
+        for (let index = 0; index < turno.length; index++) {
             let p = document.createElement(`p`)
 
-            p.innerHTML = turno8[index]
-            crearUser.appendChild(p)
+            p.innerHTML = turno[index]
+            divUser.appendChild(p)
 
         }
         
@@ -107,22 +179,39 @@ function crearUsuario(turno) {
     
 }
 
-desaparecer.addEventListener("click", ()=>{
-    let sesionIniciada = guardar_usuario(key_sesion)
-    let crearUser = document.getElementById("crearUser");
-    let eliminar = turno8.findIndex((a)=> a === sesionIniciada[0].usuario)
-    if (eliminar != -1) {
-        turno8.splice(eliminar,1)
-        
-    }
-    crearUser.innerHTML = ""
-    for (let index = 0; index < turno8.length; index++) {
-        let p = document.createElement("p")
-        p.innerHTML=turno8[index]
-        crearUser.appendChild(p)
-    }  
-    let pa = document.getElementById(`Ndisponible`)
-    let VariableDisponible = BajaSubeDisponibilidad(turno8)
-    pa.innerHTML = VariableDisponible 
-})
+function Set_pages(sesion) {
 
+    if (sesion == "" ) {
+        input_boton.classList.remove(`noVer`)
+    }else{
+        input_boton.classList.add(`noVer`)
+    }
+}
+
+Set_pages(sesion)
+
+function poderProfe(div,divUser,turno) {
+    let button = document.createElement(`button`)
+    button.innerHTML = "Agregar"
+    let button_Borrar = document.createElement(`button`)
+    button_Borrar.innerHTML = "Borrar"
+    
+    div.appendChild(button)
+    div.appendChild(button_Borrar)
+    button.addEventListener("click",
+        SetearBoton(turno,divUser)
+    )
+
+}
+function SetearBoton(turno,divUser) {
+    let imput_profe = document.getElementById("imput_profe").value
+    turno.push(imput_profe)
+    localStorage.setItem(key_turnos, JSON.stringify(turnos))
+    divUser.innerHTML = ""
+    for (let index = 0; index < turno.length; index++) {
+        let p = document.createElement("p")
+        p.innerHTML = turno [index]
+        divUser.appendChild(p)
+
+    }
+}

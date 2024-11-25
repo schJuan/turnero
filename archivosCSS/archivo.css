@@ -41,6 +41,7 @@ h1{
 
 .turno{
     display: flex;
+    flex-direction: column;
 }
 
 #crearUser{
@@ -71,4 +72,7 @@ h1{
     gap: 5px;
     padding: 5px;
     margin: 5px;
+}
+.noVer{
+    display: none;
 }

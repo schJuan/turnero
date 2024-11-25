@@ -1,0 +1,584 @@
+{
+
+
+    "productos": [
+
+        {
+            "id": 1,
+            "nombre": "Intel Celeron G6900 3.5GHz",
+            "descripcion": "12th Generación. Socket S1700",
+            "precio": 5907,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 1,
+            "img": "celeron.png",
+            "destacado": 1
+        },
+        {
+            "id": 2,
+            "nombre": "Intel Pentium Gold G7400",
+            "descripcion": "12th Generación. Socket S1700",
+            "precio": 8858,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 1,
+            "img": "pentiumGold.png",
+            "destacado": 0
+        },
+        {
+            "id": 3,
+            "nombre": "Intel i3 12100F",
+            "descripcion": "12th Generación. Sin video. Socket S1700",
+            "precio": 8858,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 1,
+            "img": "i3.png",
+            "destacado": 0
+        },
+        {
+            "id": 4,
+            "nombre": "Intel i3 12100",
+            "descripcion": "12th Generación. Video integrado. Socket S1700",
+            "precio": 23371,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 1,
+            "img": "i3.png",
+            "destacado": 1
+        },
+        {
+            "id": 5,
+            "nombre": "Intel i5 12400F",
+            "descripcion": "12th Generación. Sin video. Socket S1700",
+            "precio": 29431,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 1,
+            "img": "i5.png",
+            "destacado": 0
+        },
+        {
+            "id": 6,
+            "nombre": "Intel i5 12400",
+            "descripcion": "12th Generación. Video integrado. Socket S1700",
+            "precio": 37068,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 1,
+            "img": "i5.png",
+            "destacado": 0
+        },
+        {
+            "id": 7,
+            "nombre": "Intel i7 12700",
+            "descripcion": "12th Generación. Sin video. Socket S1700",
+            "precio": 58848,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 1,
+            "img": "i7.png",
+            "destacado": 0
+        },
+        {
+            "id": 8,
+            "nombre": "Intel i7 12700F",
+            "descripcion": "12th Generación. Video integrado. Socket S1700",
+            "precio": 65855,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 1,
+            "img": "i7.png",
+            "destacado": 0
+        },
+        {
+            "id": 9,
+            "nombre": "A6 7480 3.5GHz",
+            "descripcion": "Socket FM2 - 65w",
+            "precio": 8000,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 2,
+            "img": "a6.png",
+            "destacado": 0
+        },
+        {
+            "id": 10,
+            "nombre": "Athlon 3000G 3.5GHz",
+            "descripcion": "Socket AM4 - Vega 3 - No incluye Cooler",
+            "precio": 13500,
+            "stock": 100,
+            "id_cat": 1,
+            "id_sub": 2,
+            "img": "athlon3000.png",
+            "destacado": 1
+        },
+        {
+            "id": 11,
+            "nombre": "Ryzen 7 5700G",
+            "descripcion": "Procesador AMD Ryzen 7 5700G 100-100000263BOX de 8 núcleos y 4.6GHz de frecuencia con gráfica integrada",
+            "precio": 46278,
+            "stock": 35,
+            "id_cat": 1,
+            "id_sub": 2,
+            "img": "ryzen7.png",
+            "destacado": 1
+        },
+        {
+            "id": 12,
+            "nombre": "Ryzen 3 3100",
+            "descripcion": "Procesador gamer AMD Ryzen 3 3100 100-100000284BOX de 4 núcleos y 3.9GHz de frecuencia",
+            "precio": 49999,
+            "stock": 12,
+            "id_cat": 1,
+            "id_sub": 2,
+            "img": "ryzen3.png",
+            "destacado": 0
+        },   
+        {
+            "id": 13,
+            "nombre": "Ryzen 5 3600",
+            "descripcion": "Procesador gamer AMD Ryzen 5 3600 100-100000031BOX de 6 núcleos y 4.2GHz de frecuencia",
+            "precio": 37349,
+            "stock": 21,
+            "id_cat": 1,
+            "id_sub": 2,
+            "img": "ryzen5.png",
+            "destacado": 0
+        },      
+        {
+            "id": 14,
+            "nombre": "Motherboard Asus Prime B450m-a Ii",
+            "descripcion": "Tarjeta Madre micro ATX AMD B450 (Ryzen AM4) con soporte M.2, HDMI / DVI-D / D-Sub, SATA 6 Gbps, 1 Gb Ethernet, USB 3.2 Gen 2 Tipo-A, BIOS FlashBack™ e iluminación Aura Sync RGB",
+            "precio": 14899,
+            "stock": 31,
+            "id_cat": 2,
+            "id_sub": 16,
+            "img": "b450.png",
+            "destacado": 0
+        },
+        {
+            "id": 15,
+            "nombre": "Asus Rog Stix B450-f Gaming Ii",
+            "descripcion": "Soporta procesadores: AMD AM4 Socket for 3rd/2nd/1st Gen AMD Ryzen™/2nd and 1st Gen AMD Ryzen™ with Radeon™ Vega Graphics/Athlon™ with Radeon™",
+            "precio": 14899,
+            "stock": 31,
+            "id_cat": 2,
+            "id_sub": 16,
+            "img": "rog450.png",
+            "destacado": 0
+        },           
+        {
+            "id": 16,
+            "nombre": "Motherboard Colorful A520m-k Pro V14 Amd Am4 Ryzen Ssd M.2",
+            "descripcion": "",
+            "precio": 6500,
+            "stock": 16,
+            "id_cat": 2,
+            "id_sub": 16,
+            "img": "motherA520m.png",
+            "destacado": 1
+        },
+        {
+            "id": 17,
+            "nombre": "Motherboard Asus Prime X570-p Amd Ryzen Am4 Aura Sync Rgb",
+            "descripcion": "Socket AMD AM4: Para procesadores de escritorio AMD Ryzen™ serie 5000/ serie 5000 G/ serie 4000 G/ serie 3000/ serie 3000 G/ serie 2000/ serie 2000 G",
+            "precio": 37378,
+            "stock": 6,
+            "id_cat": 2,
+            "id_sub": 16,
+            "img": "motherX570.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 18,
+            "nombre": "Combo Mineria Z390 6 Gpu Placas + Procesador + Ram Pcreg",
+            "descripcion": "- Soporta procesadores Intel® Core™ de 9ª y 8ª Generación (Socket 1151) - Soporta memoria DDR4 4300MHz+ (OC) - 2 PCIe 3.0 x16, 3 PCIe 3.0 x1",
+            "precio": 38719,
+            "stock": 22,
+            "id_cat": 2,
+            "id_sub": 15,
+            "img": "z390.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 19,
+            "nombre": "Motherboard Asus Prime B460m-a S1200 Intel B460 Hdmi R2.0",
+            "descripcion": "PLACA MOTHER MATX B460M-A (LGA 1200) con puerto Aura Sync RGB, Dual M.2, DDR4 2933MHz, HDMI, DisplayPort, puertos USB 3.2 Gen 1",
+            "precio": 21735,
+            "stock": 12,
+            "id_cat": 2,
+            "id_sub": 15,
+            "img": "B460.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 20,
+            "nombre": "Motherboard Para Mineria Z590 Btc Duo 12 Gpu Placas Pcreg",
+            "descripcion": "Supports 10th/ 11th Generation Intel Core™ Processor Intel Z590 single chip architecture",
+            "precio": 55459,
+            "stock": 5,
+            "id_cat": 2,
+            "id_sub": 15,
+            "img": "x590.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 21,
+            "nombre": "Mother Asus Prime H510m-e Intel S1200 10ma 11va M2 Hdmi",
+            "descripcion": "PLACA MOTHER ASUS H510 (LGA 1200) micro ATX con PCIe 4.0, ranura M.2 de 32Gbps, Intel 1 Gb Ethernet, DisplayPort, HDMI, D-Sub, USB 3.2 Gen 1 Tipo A",
+            "precio": 21735,
+            "stock": 12,
+            "id_cat": 2,
+            "id_sub": 15,
+            "img": "h510.png",
+            "destacado": 1
+        },                   
+        {
+            "id": 22,
+            "nombre": "GTX 1050 Ti",
+            "descripcion": "Características de Nvidia Asus Phoenix GeForce 10 Series GTX 1050 Ti PH-GTX1050TI-4G",
+            "precio": 49999,
+            "stock": 12,
+            "id_cat": 3,
+            "id_sub": 5,
+            "img": "1050.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 23,
+            "nombre": "GForce GTX 16 Series GTX 1660",
+            "descripcion": "Placa de video Nvidia Gigabyte GeForce GTX 16 Series GTX 1660 SUPER GV-N166SOC-6GD OC Edition 6GB",
+            "precio": 83999,
+            "stock": 10,
+            "id_cat": 3,
+            "id_sub": 5,
+            "img": "1660.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 24,
+            "nombre": "GeForce RTX 2060",
+            "descripcion": "Placa de video Nvidia MSI Ventus GeForce RTX 20 Series RTX 2060 SUPER GEFORCE RTX 2060 SUPER VENTUS GP OC OC Edition 8GB",
+            "precio": 117634,
+            "stock": 15,
+            "id_cat": 3,
+            "id_sub": 5,
+            "img": "2060.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 25,
+            "nombre": "GeForce RTX 3050",
+            "descripcion": "Placa de video Nvidia Asus Dual GeForce RTX 30 Series RTX 3050 DUAL-RTX3050-O8G OC Edition 8GB",
+            "precio": 131925,
+            "stock": 5,
+            "id_cat": 3,
+            "id_sub": 5,
+            "img": "3050.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 26,
+            "nombre": "GeForce RTX 3060",
+            "descripcion": "Placa de video Nvidia MSI Ventus GeForce RTX 30 Series RTX 3060 GEFORCE RTX 3060 VENTUS 3X 12G OC 12GB",
+            "precio": 134999,
+            "stock": 3,
+            "id_cat": 3,
+            "id_sub": 5,
+            "img": "3060.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 27,
+            "nombre": "Radeon RX 6700XT",
+            "descripcion": "Placa de video AMD ASRock Phantom Gaming D Radeon 6700 Series RX 6700 XT RX6700XT PGD 12GO OC Edition 12GB",
+            "precio": 189000,
+            "stock": 5,
+            "id_cat": 3,
+            "id_sub": 6,
+            "img": "6700xt.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 28,
+            "nombre": "Radeon RX 6600XT",
+            "descripcion": "Placa de video AMD MSI Mech Radeon 6600 Series RX 6600 XT RADEON RX 6600 XT MECH 2X 8G OC 8GB",
+            "precio": 138472,
+            "stock": 12,
+            "id_cat": 3,
+            "id_sub": 6,
+            "img": "6600xt.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 29,
+            "nombre": "Radeon RX 6500",
+            "descripcion": "Placa de video AMD Sapphire Pulse Radeon RX 6500 Series RX 6500 XT 11314-01-20G 4GB",
+            "precio": 55800,
+            "stock": 20,
+            "id_cat": 3,
+            "id_sub": 6,
+            "img": "6500xt.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 30,
+            "nombre": "Radeon RX 550",
+            "descripcion": "Placa De Video Rx 550 Amd Gamer Radeon 4gb Gddr5",
+            "precio": 39000,
+            "stock": 12,
+            "id_cat": 3,
+            "id_sub": 6,
+            "img": "550xt.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 31,
+            "nombre": "Memoria Ram DDR3 2 GB",
+            "descripcion": "Memoria RAM ValueRAM color verde 2GB 1 Kingston KVR800D2N6/2G",
+            "precio": 3499,
+            "stock": 12,
+            "id_cat": 4,
+            "id_sub": 10,
+            "img": "ram2gb.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 32,
+            "nombre": "Memoria Ram DDR3 4 GB",
+            "descripcion": "Memoria RAM color verde 4GB 1 Markvision MVD34096MLD-16",
+            "precio": 4820,
+            "stock": 12,
+            "id_cat": 4,
+            "id_sub": 10,
+            "img": "ram2gb.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 33,
+            "nombre": "Memoria Ram DDR3 8 GB",
+            "descripcion": "Memoria RAM ValueRAM color verde 8GB 1 Kingston KVR16N11/8",
+            "precio": 9978,
+            "stock": 12,
+            "id_cat": 4,
+            "id_sub": 10,
+            "img": "ram2gb.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 34,
+            "nombre": "Memoria Ram DDR4 8 GB",
+            "descripcion": "Memoria RAM Fury Beast DDR4 gamer color negro 8GB 1 Kingston KF432C16BB/8",
+            "precio": 6999,
+            "stock": 12,
+            "id_cat": 4,
+            "id_sub": 11,
+            "img": "ddr4.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 35,
+            "nombre": "Memoria Ram DDR4 16 GB",
+            "descripcion": "Memoria RAM Fury Beast DDR4 gamer color negro 16GB 1 Kingston KF432C16BB1/16",
+            "precio": 12490,
+            "stock": 12,
+            "id_cat": 4,
+            "id_sub": 11,
+            "img": "ddr4.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 36,
+            "nombre": "Memoria Ram DDR4 32 GB",
+            "descripcion": "Memoria RAM Fury DDR4 gamer color negro 32GB 1 HyperX HX432C16FB3/32",
+            "precio": 37173,
+            "stock": 12,
+            "id_cat": 4,
+            "id_sub": 11,
+            "img": "ddr4.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 37,
+            "nombre": "Disco SSD 240GB",
+            "descripcion": "Disco sólido interno Gigabyte GP-GSTFS31240GNTD 240GB",
+            "precio": 5199,
+            "stock": 16,
+            "id_cat": 5,
+            "id_sub": 14,
+            "img": "ssd240.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 38,
+            "nombre": "Disco SSD 480GB",
+            "descripcion": "Disco sólido interno Kingston SA400S37/480G 480GB negro",
+            "precio": 9490,
+            "stock": 6,
+            "id_cat": 5,
+            "id_sub": 14,
+            "img": "ssd480.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 39,
+            "nombre": "Disco SSD 960GB",
+            "descripcion": "Disco sólido interno Kingston SA400S37/960G 960GB",
+            "precio": 17489,
+            "stock": 10,
+            "id_cat": 5,
+            "id_sub": 14,
+            "img": "ssd480.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 40,
+            "nombre": "Disco M2 480GB",
+            "descripcion": "Disco sólido interno Western Digital WD Green SN350 WDS480G2G0C 480GB",
+            "precio": 7799,
+            "stock": 16,
+            "id_cat": 5,
+            "id_sub": 12,
+            "img": "m2480GB.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 41,
+            "nombre": "Disco M2 NVM 256GB",
+            "descripcion": "Disco sólido interno Colorful CN Series CN600 256GB - M2 NVM",
+            "precio": 6898,
+            "stock": 16,
+            "id_cat": 5,
+            "id_sub": 12,
+            "img": "m2_256GB.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 42,
+            "nombre": "Disco M2 1000GB",
+            "descripcion": "Disco sólido interno Kingston NV1 SNVS/1000G 1000GB",
+            "precio": 16949,
+            "stock": 16,
+            "id_cat": 5,
+            "id_sub": 12,
+            "img": "m21000.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 43,
+            "nombre": "Disco rígido 2TB",
+            "descripcion": "Disco duro interno Western Digital WD20EZAZ 2TB azul",
+            "precio": 11723,
+            "stock": 16,
+            "id_cat": 5,
+            "id_sub": 13,
+            "img": "hd2tb.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 44,
+            "nombre": "Disco rígido 1TB",
+            "descripcion": "Disco duro interno Seagate Barracuda ST1000DM010 1TB",
+            "precio": 6998,
+            "stock": 16,
+            "id_cat": 5,
+            "id_sub": 13,
+            "img": "hd1tb.png",
+            "destacado": 0
+        },                   
+        {
+            "id": 45,
+            "nombre": "Disco rígido 4TB",
+            "descripcion": "Disco duro interno Western Digital WD Purple WD40PURX 4TB púrpura",
+            "precio": 20782,
+            "stock": 16,
+            "id_cat": 5,
+            "id_sub": 13,
+            "img": "hd4tb.png",
+            "destacado": 0
+        }                  
+    ],
+
+    "categorias": [
+        {
+            "id": 1,
+            "categoria": "Procesadores"
+        },
+        {
+            "id": 2,
+            "categoria": "Motherboards"
+        },
+        {
+            "id": 3,
+            "categoria": "Placas de video"
+        },
+        {
+            "id": 4,
+            "categoria": "Memorias Ram"
+        },
+        {
+            "id": 5,
+            "categoria": "Almacenamiento"
+        }    
+    ],
+
+    "subcategorias": [
+
+        {
+            "id": 1,
+            "id_categoria": 1,
+            "subcategoria": "Intel"
+        },
+        {
+            "id": 2,
+            "id_categoria": 1,
+            "subcategoria": "AMD"
+        },
+        {
+            "id": 5,
+            "id_categoria": 3,
+            "subcategoria": "GeForce"
+        },
+        {
+            "id": 6,
+            "id_categoria": 3,
+            "subcategoria": "Radeon AMD"
+        },
+          {
+            "id": 10,
+            "id_categoria": 4,
+            "subcategoria": "DDR3"        
+        },
+        {
+            "id": 11,
+            "id_categoria": 4,
+            "subcategoria": "DDR4"        
+        },
+        {
+            "id": 12,
+            "id_categoria": 5,
+            "subcategoria": "Discos M2"        
+        },
+        {
+            "id": 13,
+            "id_categoria": 5,
+            "subcategoria": "Discos Rígidos Internos"        
+        },
+        {
+            "id": 14,
+            "id_categoria": 5,
+            "subcategoria": "Discos Sólidos SSD"        
+        },
+        {
+            "id": 15,
+            "id_categoria": 2,
+            "subcategoria": "Para procesadores Intel"
+        },
+        {
+            "id": 16,
+            "id_categoria": 2,
+            "subcategoria": "Para procesadores AMD"
+        }
+    ]
+}
