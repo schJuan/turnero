@@ -198,7 +198,7 @@ function crearUsuario(turno,divUser) {
         });
     }else{
     
-        crearUser.innerHTML = ""
+        divUser.innerHTML = ""
         turno.push(sesionIniciada[0].usuario)
         for (let index = 0; index < turno.length; index++) {
             let p = document.createElement(`p`)

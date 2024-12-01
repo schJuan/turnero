@@ -16,8 +16,6 @@ const pedirPokemon = async ()=>{
         ampliar_data(pokemon.url)
 
     });
-
-
 } 
 
 

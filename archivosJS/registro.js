@@ -1,12 +1,13 @@
-
+const url_json = "./carteraAlumnos.json"
 let button = document.getElementById (`RegistroCompletado`)
 
     button.addEventListener("click",()=>{
     
     let usuario_mensaje = Validar_usuario()
     console.log(usuario_mensaje)
-    let usuario_guardados = guardar_usuario()
+    let usuario_guardados = guardar_usuario(key_usuario)
     if (usuario_mensaje instanceof Usuario) {
+        
         usuario_mensaje.NombreUsuario()
         usuario_guardados.push(usuario_mensaje)
         localStorage.setItem(key_usuario,JSON.stringify(usuario_guardados))
@@ -17,6 +18,7 @@ let button = document.getElementById (`RegistroCompletado`)
             showConfirmButton: false,
             timer: 1500
         });
+
     
     } else {
         let formularioIncompleto = document.getElementById("formularioIncompleto")
@@ -99,3 +101,31 @@ function Validar_usuario() {
 }
 
 
+
+
+//let coleccion_profes = new Array();
+
+const targetaProfe = async ()=>{
+    const targetProfes = document.getElementById("targetProfes")
+    const resp = await fetch (url_json)
+    const data = await resp.json()
+
+    data.profesores.forEach(profe =>{
+        let newProfe = document.createElement("div")
+        newProfe.classList.add("divProfes")
+        newProfe.innerHTML = `
+                        <img src=${profe.img} >
+                        <h2>
+                            ${profe.nombre}
+                        </h2>
+                        <h2>
+                         usuario: ${profe.usuario}
+                        </h2>
+                            `
+        targetProfes.appendChild(newProfe)
+                        })
+    
+                        
+} 
+
+targetaProfe()

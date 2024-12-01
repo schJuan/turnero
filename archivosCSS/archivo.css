@@ -41,7 +41,7 @@ h1{
 
 .turno{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 #crearUser{
@@ -75,4 +75,18 @@ h1{
 }
 .noVer{
     display: none;
+}
+
+.divProfes{
+    width: 200px;
+    border: 5px solid black;
+    margin: 10px;
+    padding: 5px;
+}
+.divProfes img{
+    width: 100px;
+    height: 100px;
+}
+#targetProfes{
+    display: flex;
 }
