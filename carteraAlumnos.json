@@ -1,0 +1,21 @@
+{
+    "profesores":[
+        {
+            "nombre":"Catelotti Franco",
+            "edad": 30,
+            "usuario":"FCatelott" 
+        },
+        {
+            "nombre": "Catelotti Tomas",
+            "edad": 20,
+            "usuario": "TCatelott"
+        },
+        {
+        
+            "nombre": "Boudot Lucas",
+            "edad": 28,
+            "usuario": "LBoudot"
+        
+        }
+    ]
+}

@@ -1,3 +1,4 @@
+
 const url_turno = "./turnos.json"
 const key_sesion = "key_sesion"
 let sesion = JSON.parse(localStorage.getItem(key_sesion)) || []
@@ -74,7 +75,7 @@ function crear_vistaTurno(turno,div,divUser){
     div.appendChild(button)
     div.appendChild(button_Desreservar)
     
-    poderProfe(div,divUser,turno.usuarios)
+    //poderProfe(div,divUser,turno.usuarios)
     
 }
 
@@ -104,16 +105,34 @@ input_boton.addEventListener("click",()=>{
         }
     }
     if (verificacion == 2) {
-        alert("hola profe")
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "hola profe",
+            showConfirmButton: false,
+            timer: 1500
+        });
         input_boton.classList.add(`noVer`)
         
     } else if (verificacion == 1) {
-        alert("hola Usuario")
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "hola mortal",
+            showConfirmButton: false,
+            timer: 1500
+        });
         input_boton.classList.add(`noVer`)
 
 
     } else {
-        alert ("Usuario o contraseña incorrecto")
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Usuario o contraseña incorrecto",
+            footer: '<a href="./registro.htm">Ya te has registrado?</a>'
+        });
+
     } 
 })
 
@@ -157,11 +176,26 @@ function crearUsuario(turno,divUser) {
     let sesionIniciada = guardar_usuario(key_sesion)
     let falso = averiguarUsuario(turno)
     if (falso !== 0 ){
-        alert("no es posible agregar, ya estas")
+        Swal.fire({
+            icon: "error",
+            title: "Taaantas ganas de entrenar?",
+            text: "Ya estas en el turno",
+            
+        });
     } else if (sesionIniciada.length === 0){
-        alert ("Debes iniciar sesion")
+        Swal.fire({
+            icon: "error",
+            title: "No tan rapido master",
+            text: "Tenes que iniciar sesion",
+            footer: '<a href="./registro.htm">Ya te has registrado?</a>'
+
+        });
     }else if (turno.length == 12){
-        alert("turno lleno")
+        Swal.fire({
+            icon: "error",
+            title: "Te re ganaron de mano master",
+            text: "El turno esta lleno",
+        });
     }else{
     
         crearUser.innerHTML = ""

@@ -10,7 +10,13 @@ let button = document.getElementById (`RegistroCompletado`)
         usuario_mensaje.NombreUsuario()
         usuario_guardados.push(usuario_mensaje)
         localStorage.setItem(key_usuario,JSON.stringify(usuario_guardados))
-        alert("Se creo correcto wacho")
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Usuario creado con exito",
+            showConfirmButton: false,
+            timer: 1500
+        });
     
     } else {
         let formularioIncompleto = document.getElementById("formularioIncompleto")
