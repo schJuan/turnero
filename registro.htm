@@ -13,21 +13,36 @@
             <h1> Bienvenidos al Registro </h1>
     </header>
     <h2>El nombre de usuario va a  ser la primera letra de tu nombre y 8 de tu apellido (en caso de que tenga menos va el apellido completo) esto se crea automaticamente</h2>
-    <input type="text" placeholder="Ingresa tu Nombre" id="Nombre">
-    <input type="text" placeholder="Ingresa tu Apellido" id="Apellido">
-    <input type="text" placeholder="Ingresa tu contraseña" id="Contrasenia">
-    <input type="text" placeholder="Confirma tu contraseña" id="Contrasenia2">
-    <input type="text" placeholder="Ingresa tu Edad" id="Edad">
-    <input type="number" placeholder="Ingresa tu Nunero" id="Telefono">
-    <button id="RegistroCompletado"> Registrarte</button>
-    
+    <div>
+
+        <input type="text" placeholder="Ingresa tu Nombre" id="Nombre">
+        <input type="text" placeholder="Ingresa tu Apellido" id="Apellido">
+        <input type="text" placeholder="Ingresa tu contraseña" id="Contrasenia">
+        <input type="text" placeholder="Confirma tu contraseña" id="Contrasenia2">
+        <input type="text" placeholder="Ingresa tu Edad" id="Edad">
+        <input type="number" placeholder="Ingresa tu Nunero" id="Telefono">
+        <button id="RegistroCompletado" >Registro</button>
+        <button> <a href="./registro.htm">Recarga</a> </button>
+    </div>
+    <div>
+        
+        <input type="text" placeholder="Ingresa tu usuario" id="usuario">
+        <input type="password" placeholder="Ingresa tu contraseña" id="contrasenia">
+        <input type="button" value="Iniciar Sesion" id="inicioSesion">  
+        <input type="button" value="Cerrar sesion" id="cerrarSesion" >
+        <a href = "./registro.htm" ><button > Registro</button></a>
+        
+    </div>
     <ul id="formularioIncompleto">   </ul>
     <div id="targetProfes"> </div>
     <div id="alumnoNuevo"></div>
 
 
 
-    <script src="./turneroavanzado.js"></script>
+    <script src="./keyusuario.js"></script>
+    <script src="./archivosJS/alumnos.js"></script>
+    <script src="./turnos.js"></script>
+    <script src="./archivosJS/archivo.js"></script>
     <script src="./archivosJS/data.js"></script>
     <script src="./archivosJS/registro.js"></script>
 </body>

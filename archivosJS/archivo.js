@@ -6,6 +6,7 @@ let sesion = JSON.parse(localStorage.getItem(key_sesion)) || []
 let horarios = document.getElementById("horarios")
 
 const pedirTurno = async () =>{
+   
     turnos.forEach(turno => {
         
         let diaHora = document.createElement("div")
@@ -220,8 +221,8 @@ function Set_pages(sesion) {
     }else{
         input_boton.classList.add(`noVer`)
     }
+    CardUsuario()
 }
-
 Set_pages(sesion)
 
 function poderProfe(div,divUser,turno) {
@@ -248,4 +249,31 @@ function SetearBoton(turno,divUser) {
         divUser.appendChild(p)
 
     }
+}
+
+function CardUsuario() {
+    let alumnoNuevo = document.getElementById("alumnoNuevo")
+    let Target = JSON.parse(localStorage.getItem(key_usuario))
+    console.log("Entro")    
+    Target.forEach(alumno =>{
+        console.log(alumno.nombre)
+        let newAlumno = document.createElement("div")
+        newAlumno.classList.add("divProfes")
+        newAlumno.innerHTML = `
+                        <img src="./Multimedia/img/Logo.png" alt="Foto de perfil">
+                        <h2>
+                          Nombre:  ${alumno.nombre}
+                        </h2>
+                        <h2>
+                         Usuario: ${alumno.usuario}
+                        </h2>
+                        <h2>
+                         Edad: ${alumno.edad}
+                        </h2>
+                        <h2>
+                         Numero: ${alumno.telefono}
+                        </h2>
+                            `
+        alumnoNuevo.appendChild(newAlumno)
+    })
 }

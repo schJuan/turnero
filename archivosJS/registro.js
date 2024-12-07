@@ -98,6 +98,7 @@ function Validar_usuario() {
     }else{
         return msj
     }
+    CardUsuario()
 }
 
 
