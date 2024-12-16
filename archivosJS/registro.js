@@ -29,7 +29,7 @@ let button = document.getElementById (`RegistroCompletado`)
             
         }
     }
-    
+    CardUsuario()
 }
 )
 
